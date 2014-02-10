@@ -1,0 +1,29 @@
+@font-face
+{
+font-family: Stratol;
+src: url("../fonts/Strato-linked.ttf");
+}
+
+@font-face
+{
+font-family: Stratou;
+src: url("../fonts/Strato-unlinked.ttf");
+}
+
+
+
+@font-face
+{
+font-family: Pecita;
+src: url("../fonts/Pecita.otf");
+}
+
+h1
+{
+font-family: Pecita;
+}
+
+h2
+{
+font-family: Stratou;
+}
