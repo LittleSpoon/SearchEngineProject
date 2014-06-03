@@ -18,4 +18,4 @@ TEMPLATE = app
 SOURCES += main.cpp
 
 HEADERS += \
-    DataStorage.h
+    dataStorage.h
