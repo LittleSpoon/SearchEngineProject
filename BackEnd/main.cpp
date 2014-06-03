@@ -1,8 +1,8 @@
-#include <QCoreApplication>
+#include <QCoreApplication> //Do not delete.
 
 int main(int argc, char *argv[])
 {
-    QCoreApplication a(argc, argv);
+    QCoreApplication a(argc, argv); //Do not delete.
 
-    return a.exec();
+    return a.exec(); //Do not delete.
 }
