@@ -1,0 +1,4 @@
+#ifndef DATASTORAGE_H
+#define DATASTORAGE_H
+
+#endif // DATASTORAGE_H
