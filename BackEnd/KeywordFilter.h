@@ -1,0 +1,4 @@
+#ifndef KEYWORDFILTER_H
+#define KEYWORDFILTER_H
+
+#endif // KEYWORDFILTER_H

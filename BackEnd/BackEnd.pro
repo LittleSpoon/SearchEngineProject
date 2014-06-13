@@ -18,4 +18,5 @@ TEMPLATE = app
 SOURCES += main.cpp
 
 HEADERS += \
-    dataStorage.h
+    dataStorageInterface.h \
+    kewordFilterModuleInterface.h
