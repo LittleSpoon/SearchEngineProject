@@ -1,0 +1,15 @@
+#ifndef KEWORDFILTERMODULEINTERFACE_H
+#define KEWORDFILTERMODULEINTERFACE_H
+#include <string>
+#include <vector>
+
+using namespace std;
+
+class keywordFilterModuleInterface {
+protected:
+    virtual vector<String> findKeyword() = 0;
+private:
+    virtual vector<String> filterBadKeyword(vector<String> keywordsList);
+};
+
+#endif // KEWORDFILTERMODULEINTERFACE_H

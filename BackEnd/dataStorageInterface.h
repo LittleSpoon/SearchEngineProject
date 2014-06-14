@@ -1,9 +1,9 @@
 #ifndef DATASTORAGE_H
 #define DATASTORAGE_H
 
-#endif // DATASTORAGE_H
 
-class dataStorage {
+
+class dataStorageInterface {
 
 public:
     virtual void storeData() = 0;   //In an ideal world: call checkData, if then store the data.
@@ -14,3 +14,5 @@ protected:
     virtual void checkKeyWords() = 0;
 
 };
+
+#endif // DATASTORAGE_H

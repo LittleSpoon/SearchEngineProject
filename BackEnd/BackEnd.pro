@@ -15,8 +15,13 @@ CONFIG   -= app_bundle
 TEMPLATE = app
 
 
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    keywordFilterModuleInterface.cpp \
+    tagmodulefilter.cpp \
+    badkeyword.cpp
 
 HEADERS += \
     dataStorageInterface.h \
-    kewordFilterModuleInterface.h
+    keywordFilterModuleInterface.h \
+    tagmodulefilter.h \
+    badkeyword.h

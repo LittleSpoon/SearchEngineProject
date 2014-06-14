@@ -1,0 +1,12 @@
+#ifndef TAGMODULEFILTER_H
+#define TAGMODULEFILTER_H
+
+class tagModuleFilter : public keywordFilterModuleInterfacec
+{
+public:
+    tagModuleFilter();
+protected:
+    vector<String> findKeyword()
+};
+
+#endif // TAGMODULEFILTER_H
