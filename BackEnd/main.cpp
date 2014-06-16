@@ -1,4 +1,5 @@
 #include <QCoreApplication> //Do not delete.
+#include <chilkat-9.5.0-mingw32/include/CkSpider.h>
 
 int main(int argc, char *argv[])
 {

@@ -3,3 +3,5 @@
 tagModuleFilter::tagModuleFilter()
 {
 }
+
+vector<String> tagModuleFilter::

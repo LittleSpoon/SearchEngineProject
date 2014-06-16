@@ -18,10 +18,13 @@ TEMPLATE = app
 SOURCES += main.cpp \
     keywordFilterModuleInterface.cpp \
     tagmodulefilter.cpp \
-    badkeyword.cpp
+    badkeyword.cpp \
+    connectiontodb.cpp
 
 HEADERS += \
     dataStorageInterface.h \
     keywordFilterModuleInterface.h \
     tagmodulefilter.h \
-    badkeyword.h
+    badkeyword.h \
+    defaultServer.h \
+    connectiontodb.h
