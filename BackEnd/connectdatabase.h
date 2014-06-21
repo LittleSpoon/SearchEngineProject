@@ -8,6 +8,7 @@ private :
 
 public:
     ConnectDatabase(QSqlDatabase);
+    bool connetionOpen();
 };
 
 #endif // CONNECTDATABASE_H

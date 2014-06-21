@@ -26,9 +26,11 @@ ConnectDatabase::ConnectDatabase(QSqlDatabase db)
     db.setUserName(USERNAME);
     db.setPassword(PASSWORD);
     db.setDatabaseName(DB_NAME);
+    bool isConnected;
 
     if(db.open())
     {
+        isConnected = true;
         cout << "connection a la base de donnees " << DB_NAME << " reussie"<< endl;
 
        /* QSqlQuery nlleRequete;
@@ -54,8 +56,14 @@ ConnectDatabase::ConnectDatabase(QSqlDatabase db)
     }
     else
     {
+        isConnected = false;
         cout << "Unable to connect to database" << endl;
     }
 
+}
+
+bool connecDatabase::connetionOpen(){
+
+    return isconnected;
 }
 
