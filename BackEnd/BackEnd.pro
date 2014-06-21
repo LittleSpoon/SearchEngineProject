@@ -5,8 +5,9 @@
 #-------------------------------------------------
 
 QT       += core
-
+QT       += sql
 QT       -= gui
+QMAKE_CXXFLAGS += -std=c++11
 
 TARGET = BackEnd
 CONFIG   += console
