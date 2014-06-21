@@ -22,7 +22,8 @@ SOURCES += main.cpp \
     badkeyword.cpp \
     connectiontodb.cpp \
     connectdatabase.cpp \
-    insertrow.cpp
+    insertrow.cpp \
+    download.cpp
 
 HEADERS += \
     dataStorageInterface.h \
@@ -33,4 +34,5 @@ HEADERS += \
     connectiontodb.h \
     connectdatabase.h \
     Constantes.h \
-    insertrow.h
+    insertrow.h \
+    download.h
