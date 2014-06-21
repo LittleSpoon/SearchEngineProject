@@ -20,7 +20,9 @@ SOURCES += main.cpp \
     keywordFilterModuleInterface.cpp \
     tagmodulefilter.cpp \
     badkeyword.cpp \
-    connectiontodb.cpp
+    connectiontodb.cpp \
+    connectdatabase.cpp \
+    insertrow.cpp
 
 HEADERS += \
     dataStorageInterface.h \
@@ -28,4 +30,7 @@ HEADERS += \
     tagmodulefilter.h \
     badkeyword.h \
     defaultServer.h \
-    connectiontodb.h
+    connectiontodb.h \
+    connectdatabase.h \
+    Constantes.h \
+    insertrow.h
