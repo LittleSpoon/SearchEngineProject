@@ -29,7 +29,7 @@ void htmlParser::extractContent(QString startTag, QString endTag)
 
 QString htmlParser::removeSpeCha()
 {
- for(int i=0,htmlContent.length,i++) {
+ for(int i=0;htmlContent.length;i++) {
 
  }
 }
