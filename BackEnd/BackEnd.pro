@@ -17,22 +17,15 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp \
-    keywordFilterModuleInterface.cpp \
-    tagmodulefilter.cpp \
-    badkeyword.cpp \
-    connectiontodb.cpp \
     connectdatabase.cpp \
     insertrow.cpp \
-    download.cpp
+    download.cpp \
+    htmlparser.cpp
 
 HEADERS += \
     dataStorageInterface.h \
-    keywordFilterModuleInterface.h \
-    tagmodulefilter.h \
-    badkeyword.h \
-    defaultServer.h \
-    connectiontodb.h \
     connectdatabase.h \
     Constantes.h \
     insertrow.h \
-    download.h
+    download.h \
+    htmlparser.h

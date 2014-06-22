@@ -18,11 +18,10 @@ private:
     QByteArray downloadedData;
     QNetworkAccessManager access;
 
-
 signals:
     void downloaded();
 
-public slots:
+protected slots:
     void fileDownloaded(QNetworkReply* reply);
 };
 
