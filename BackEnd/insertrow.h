@@ -2,15 +2,26 @@
 #define INSERTROW_H
 #include <QCoreApplication>
 #include <QString>
-
+#include <QObject>
 #include "connectdatabase.h"
 
-class InsertRow
+class InsertRow : public QObject
 {
+     Q_OBJECT
+
+    private :
+
+        QString SqlQuery;
 
     public:
-        InsertRow(QString tableToChange, QString columnToChange1,QString columnToChange2 ,
-                  QString valueToInsert1, QString valueToInsert2);
+         explicit InsertRow(QObject *parent = 0);
+        InsertRow();
+
+        void InsertNewRow();
+
+    private slots:
+
+        void SetQuery(QString SqlQueryToInsert);
 };
 
 #endif // INSERTROW_H
