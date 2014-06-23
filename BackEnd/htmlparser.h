@@ -22,7 +22,7 @@ protected:
     QString removeSpeCha();
 
 signals:
-    void parsingFinished(htmlPage *);
+    void parsingFinished(htmlPage *Data);
     void newUrlFound(QUrl newUrl);
 
 public slots:
