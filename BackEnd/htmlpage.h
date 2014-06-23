@@ -5,6 +5,8 @@
 #include <QUrl>
 #include <QStringList>
 
+//This class contain just data to put in the database.
+
 class htmlPage : public QObject
 {
     Q_OBJECT

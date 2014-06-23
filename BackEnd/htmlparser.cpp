@@ -5,6 +5,8 @@ htmlParser::htmlParser(QObject *parent) :
 {
     QObject::connect(&source, SIGNAL(downloaded()),
                      SLOT(htmldownloaded()));
+    QObject::connect(this,SIGNAL(newUrlFound(QUrl)),
+                     &source, SLOT(newDownload(QUrl)));
 
     QUrl url = QUrl("http://www.batoto.net/");
 
