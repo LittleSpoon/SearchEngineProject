@@ -23,6 +23,7 @@ signals:
 
 protected slots:
     void fileDownloaded(QNetworkReply* reply);
+    void newDownload(QUrl newUrl);
 };
 
 #endif // DOWNLOAD_H

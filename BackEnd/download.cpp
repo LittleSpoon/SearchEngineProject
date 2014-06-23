@@ -6,6 +6,8 @@ download::download(QObject *parent) :
 {
     QObject::connect(&access, SIGNAL(finished(QNetworkReply*)),
             SLOT(fileDownloaded(QNetworkReply*)));
+    QObject::connect(SIGNAL(newUrlFound(QUrl)),
+                     SLOT(newDownload(QUrl));
 
 }
 
@@ -26,4 +28,9 @@ void download::fileDownloaded(QNetworkReply *reply)
     downloadedData = reply->readAll();
     reply->deleteLater();
     emit downloaded();
+}
+
+void download::newDownload(QUrl newUrl)
+{
+    this->downloadNewPage(newUrl);
 }
