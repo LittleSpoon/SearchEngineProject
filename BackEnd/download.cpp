@@ -6,10 +6,9 @@ download::download(QObject *parent) :
 {
     QObject::connect(&access, SIGNAL(finished(QNetworkReply*)),
             SLOT(fileDownloaded(QNetworkReply*)));
-    QObject::connect(SIGNAL(newUrlFound(QUrl)),
-                     SLOT(newDownload(QUrl));
 
 }
+
 
 QString download::getData()
 {

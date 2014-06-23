@@ -20,6 +20,9 @@ protected:
     void extractContent(QString startTag, QString endTag);
     QString htmlContent;
     QString removeSpeCha();
+    void searchUrl();
+    void searchTitle();
+    void searchH1();
 
 signals:
     void parsingFinished(htmlPage *Data);
