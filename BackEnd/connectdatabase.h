@@ -6,8 +6,9 @@ class ConnectDatabase
 {
 private :
 
+    bool isConnected;
 public:
-    ConnectDatabase(QSqlDatabase);
+    ConnectDatabase(QSqlDatabase db);
     bool connetionOpen();
 };
 

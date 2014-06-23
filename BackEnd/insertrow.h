@@ -4,6 +4,7 @@
 #include <QString>
 #include <QObject>
 #include "connectdatabase.h"
+#include "htmlpage.h"
 
 class InsertRow : public QObject
 {
@@ -11,17 +12,17 @@ class InsertRow : public QObject
 
     private :
 
-        QString SqlQuery;
+        QString sqlQuery;
 
     public:
          explicit InsertRow(QObject *parent = 0);
         InsertRow();
 
-        void InsertNewRow();
+        void insertNewRow(QString sqlQuery);
 
     private slots:
 
-        void SetQuery(QString SqlQueryToInsert);
+        void convertHtmlPageIntoSqlQuery(htmlPage *query);
 };
 
 #endif // INSERTROW_H

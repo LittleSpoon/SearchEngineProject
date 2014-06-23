@@ -1,9 +1,8 @@
 #include <QCoreApplication>
-
 #include <iostream>
 #include "connectdatabase.h"
 #include "insertrow.h"
-
+#include "htmlparser.h"
 #include "QtSql/qsqlquery.h"
 
 
@@ -11,22 +10,22 @@
 InsertRow::InsertRow(QObject *parent)
 {
 
-   QObject::connect(SLOT (InsertNewRow(QString)));
+    /*
+   QObject::connect(SIGNAL(parsingFinished(htmlPage*)),
+                         SLOT(convertHtmlPageIntoSqlQuery(htmlPage* query)));*/
 
-    SqlQuery = "";
-
+    sqlQuery = "";
 }
 
-void InsertNewRow(QString query)
+void InsertRow::insertNewRow(QString sqlQuery)
 {
-    if(query != SqlQuery)
-    {
-        SqlQuery = query;
-    }
+
+
+
 
 
     //on affiche la requete dans la console :
-    std::cout <<query.toStdString()<<std::endl;
+    std::cout <<sqlQuery.toStdString()<<std::endl;
 
     //Création d'un objet de requête :
     QSqlQuery newQuery;
@@ -34,7 +33,7 @@ void InsertNewRow(QString query)
 
     //On teste si la requête a aboutie:
 
-    if(newQuery.exec(query)){
+    if(newQuery.exec(sqlQuery)){
         std::cout << "insertion reussie" <<std::endl;
     }
     else
@@ -43,7 +42,11 @@ void InsertNewRow(QString query)
     }
 }
 
-void SetQuery(QString SqlQueryToInsert)
+void InsertRow::convertHtmlPageIntoSqlQuery(htmlPage *query)
 {
-    InsertNewRow(SqlQueryToInsert);
+
+    //On crée ,dans un QString , une requête sql à partir des arguments recus en paramètre :
+   sqlQuery = "INSERT INTO `websites`(`website`,`url`) VALUES(" + query->getTitle() + ","+ query->getUrl().toString() +");";
+
+    insertNewRow(sqlQuery);
 }

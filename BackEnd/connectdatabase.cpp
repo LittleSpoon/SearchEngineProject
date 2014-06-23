@@ -64,6 +64,6 @@ ConnectDatabase::ConnectDatabase(QSqlDatabase db)
 
 bool ConnectDatabase::connetionOpen(){
 
-    return isconnected;
+    return isConnected;
 }
 
