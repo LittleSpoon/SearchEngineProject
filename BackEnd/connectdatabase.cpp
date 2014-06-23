@@ -26,7 +26,7 @@ ConnectDatabase::ConnectDatabase(QSqlDatabase db)
     db.setUserName(USERNAME);
     db.setPassword(PASSWORD);
     db.setDatabaseName(DB_NAME);
-    bool isConnected;
+    isConnected = false;
 
     if(db.open())
     {
@@ -62,7 +62,7 @@ ConnectDatabase::ConnectDatabase(QSqlDatabase db)
 
 }
 
-bool connecDatabase::connetionOpen(){
+bool ConnectDatabase::connetionOpen(){
 
     return isconnected;
 }
