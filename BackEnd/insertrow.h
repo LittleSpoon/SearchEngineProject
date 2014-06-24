@@ -3,26 +3,32 @@
 #include <QCoreApplication>
 #include <QString>
 #include <QObject>
-#include "connectdatabase.h"
 #include "htmlpage.h"
+#include <iostream>
+#include "connectdatabase.h"
+#include "htmlparser.h"
+#include "QtSql/qsqlquery.h"
 
-class InsertRow : public QObject
+class insertRow : public QObject
 {
-     Q_OBJECT
+    Q_OBJECT
 
-    private :
+public:
+    explicit insertRow(QObject *parent = 0);
 
-        QString sqlQuery;
 
-    public:
-         explicit InsertRow(QObject *parent = 0);
-        InsertRow();
+    void insertNewRow(QString sqlQuery);
 
-        void insertNewRow(QString sqlQuery);
+private :
 
-    private slots:
+    QString sqlQuery;
 
-        void convertHtmlPageIntoSqlQuery(htmlPage *query);
+
+
+
+public slots:
+
+    void newInsertQuery(htmlPage *query);
 };
 
 #endif // INSERTROW_H

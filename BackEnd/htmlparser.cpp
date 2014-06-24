@@ -1,16 +1,16 @@
 #include "htmlparser.h"
 
-htmlParser::htmlParser(QObject *parent) :
+htmlParser::htmlParser(QUrl startUrl, QObject *parent) :
     QObject(parent)
 {
     QObject::connect(&source, SIGNAL(downloaded()),
                      SLOT(htmldownloaded()));
     QObject::connect(this,SIGNAL(newUrlFound(QUrl)),
                      &source, SLOT(newDownload(QUrl)));
+    QObject::connect(this,SIGNAL(parsingFinished(htmlPage*)),
+                     &databaseTransaction, SLOT(newInsertQuery(htmlPage*));
 
-    QUrl url = QUrl("http://www.batoto.net/");
-
-    source.downloadNewPage(url);
+    source.downloadNewPage(startUrl);
 }
 
 void htmlParser::htmldownloaded()
@@ -18,15 +18,13 @@ void htmlParser::htmldownloaded()
    htmlData = source.getData();
 }
 
-void htmlParser::extractContent(QString startTag, QString endTag)
+QString htmlParser::extractContent(QString startTag, QString endTag)
 {
     int lengthStartTag = startTag.length();
     int stringStart = htmlData.indexOf(startTag) + lengthStartTag;
     int stringLength = htmlData.indexOf(endTag) - stringStart ;
 
-    htmlContent = htmlData.mid(stringStart,stringLength);
-
-    return result;
+    return htmlData.mid(stringStart,stringLength);
 }
 
 QString htmlParser::removeSpeCha()
@@ -36,5 +34,6 @@ QString htmlParser::removeSpeCha()
 
 void htmlParser::searchUrl()
 {
-    extractContent();
+    QUrl newUrl = QUrl(this->extractContent("<a href=\"","\">"));
+    emit newUrlFound(newUrl);
 }

@@ -1,13 +1,11 @@
-#include <QCoreApplication>
-#include <iostream>
-#include "connectdatabase.h"
+
 #include "insertrow.h"
-#include "htmlparser.h"
-#include "QtSql/qsqlquery.h"
+
 
 
 //COnstructor :
-InsertRow::InsertRow(QObject *parent)
+insertRow::insertRow(QObject *parent):
+    QObject(parent)
 {
 
     /*
@@ -15,9 +13,12 @@ InsertRow::InsertRow(QObject *parent)
                          SLOT(convertHtmlPageIntoSqlQuery(htmlPage* query)));*/
 
     sqlQuery = "";
+    QSqlDatabase db;
+    ConnectDatabase connection(db);
+
 }
 
-void InsertRow::insertNewRow(QString sqlQuery)
+void insertRow::insertNewRow(QString sqlQuery)
 {
 
     //on affiche la requete dans la console :
@@ -39,7 +40,7 @@ void InsertRow::insertNewRow(QString sqlQuery)
 
 }
 
-void InsertRow::convertHtmlPageIntoSqlQuery(htmlPage *query)
+void insertRow::newInsertQuery(htmlPage *query)
 {
 
     int id = 0;

@@ -6,18 +6,20 @@
 #include <QString>
 #include "download.h"
 #include "htmlpage.h"
+#include "insertrow.h"
 
 class htmlParser : public QObject
 {
     Q_OBJECT
 public:
-    explicit htmlParser(QObject *parent = 0);
+    explicit htmlParser(QUrl startUrl,QObject *parent = 0);
     QString htmlData;
     download source;
     htmlPage Data;
+    insertRow databaseTransaction;
 
 protected:
-    void extractContent(QString startTag, QString endTag);
+    QString extractContent(QString startTag, QString endTag);
     QString htmlContent;
     QString removeSpeCha();
     void searchUrl();

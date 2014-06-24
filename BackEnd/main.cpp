@@ -1,11 +1,14 @@
-#include <QCoreApplication> //Do not delete.
-#include <QtSql>
-#include "connectdatabase.h"
-#include "insertrow.h"
+#include <QCoreApplication>
+#include <QUrl>
+#include "htmlparser.h"
+
 
 int main(int argc, char *argv[])
 {
-    QCoreApplication a(argc, argv); //Do not delete.
+    QCoreApplication a(argc, argv);
 
-    return a.exec(); //Do not delete.
+    QUrl startUrl = QUrl("http://gateau.spoons.com");
+    htmlParser start(startUrl);
+
+    return a.exec();
 }
