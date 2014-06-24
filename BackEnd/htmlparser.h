@@ -4,9 +4,10 @@
 #include <QObject>
 #include <QUrl>
 #include <QString>
+#include "insertrow.h"
 #include "download.h"
 #include "htmlpage.h"
-#include "insertrow.h"
+
 
 class htmlParser : public QObject
 {

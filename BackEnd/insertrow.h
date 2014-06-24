@@ -3,10 +3,10 @@
 #include <QCoreApplication>
 #include <QString>
 #include <QObject>
+#include <QVariant>
 #include "htmlpage.h"
 #include <iostream>
 #include "connectdatabase.h"
-#include "htmlparser.h"
 #include "QtSql/qsqlquery.h"
 
 class insertRow : public QObject

@@ -1,13 +1,9 @@
-
 #include "insertrow.h"
 
-
-
 //COnstructor :
-insertRow::insertRow(QObject *parent):
+insertRow::insertRow(QObject *parent) :
     QObject(parent)
-{
-
+{  
     /*
    QObject::connect(SIGNAL(parsingFinished(htmlPage*)),
                          SLOT(convertHtmlPageIntoSqlQuery(htmlPage* query)));*/
@@ -50,34 +46,35 @@ void insertRow::newInsertQuery(htmlPage *query)
 
 
     //On crée ,dans un QString , une requête sql à partir des arguments recus en paramètre :
-   sqlQuery = "INSERT INTO `websites`(`website`,`url`) VALUES('" + query->getTitle() + "','"+ query->getUrl().toString() +"');";
+    sqlQuery = "INSERT INTO `websites`(`website`,`url`) VALUES('" + query->getTitle() + "','"+ query->getUrl().toString() +"');";
 
 
-   //On appelle la methode sqlQuery :
-   insertNewRow(sqlQuery);
+    //On appelle la methode sqlQuery :
+    insertNewRow(sqlQuery);
 
 
-   //On crée une nlle requête pour récupérer le website_id :
-   sqlQuery = "SELECT `website_id` FROM `websites` WHERE website="+query->getTitle()+";";
+    //On crée une nlle requête pour récupérer le website_id :
+    sqlQuery = "SELECT `website_id` FROM `websites` WHERE website="+query->getTitle()+";";
 
 
-   //On récupère le website_id de la table website dans un int:
+    //On récupère le website_id de la table website dans un int:
 
-   if (tempQuery.exec(sqlQuery))
-   {
-       int id = tempQuery.value(0).toInt();
-   }
-   else
-   {
-       std::cout << "impossible d'obtenir le website id "<<std::endl;
-   }
+    if (tempQuery.exec(sqlQuery))
+    {
+        int id;
+        id = tempQuery.value(0).toInt();
+    }
+    else
+    {
+        std::cout << "impossible d'obtenir le website id "<<std::endl;
+    }
 
-   //On crée une nouvelle requête pour inserer le mot cle correspondant au website id :
-   for(int i = 0; i < query->getKeywords().size();i++)
-   {
+    //On crée une nouvelle requête pour inserer le mot cle correspondant au website id :
+    for(int i = 0; i < query->getKeywords().size();i++)
+    {
         sqlQuery = "INSERT INTO `keywords` (`keyword`,`keyword_website`) VALUES('"+ keywordList[i] + "','"+ id +"');";
-   }
-   //sqlQuery = "INSERT INTO `keywords` (`keyword`,`keyword_website`) VALUES('"+query->getKeywords()+ "','"+ id +"');";
+    }
+    //sqlQuery = "INSERT INTO `keywords` (`keyword`,`keyword_website`) VALUES('"+query->getKeywords()+ "','"+ id +"');";
 
-   insertNewRow(sqlQuery);
+    insertNewRow(sqlQuery);
 }

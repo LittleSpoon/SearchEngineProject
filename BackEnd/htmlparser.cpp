@@ -8,7 +8,7 @@ htmlParser::htmlParser(QUrl startUrl, QObject *parent) :
     QObject::connect(this,SIGNAL(newUrlFound(QUrl)),
                      &source, SLOT(newDownload(QUrl)));
     QObject::connect(this,SIGNAL(parsingFinished(htmlPage*)),
-                     &databaseTransaction, SLOT(newInsertQuery(htmlPage*));
+                     &databaseTransaction, SLOT(newInsertQuery(htmlPage*)));
 
     source.downloadNewPage(startUrl);
 }
